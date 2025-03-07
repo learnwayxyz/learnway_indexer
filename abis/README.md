@@ -6,7 +6,7 @@ This API provides access to blockchain transaction data indexed from the Sepolia
 
 ## Base URL
 
-```
+```sh
 https://your-api-domain.com
 ```
 
@@ -24,7 +24,7 @@ All responses are returned in JSON format.
 
 Returns the most recent transactions in descending order by timestamp.
 
-```
+```sh
 GET /api/transactions
 ```
 
@@ -44,8 +44,7 @@ GET /api/transactions
     "tx_type": "Token Transfer",
     "status": "confirmed",
     "decoded_data": {"amount": "1000000000000000000"}
-  },
-  // ...more transactions
+  }
 ]
 ```
 
@@ -53,7 +52,7 @@ GET /api/transactions
 
 Returns transactions with pagination support.
 
-```
+```sh
 GET /api/transactions/page/:page?limit=20
 ```
 
@@ -71,10 +70,8 @@ GET /api/transactions/page/:page?limit=20
   "data": [
     {
       "id": 1,
-      "tx_hash": "0x123...",
-      // ...other transaction fields
-    },
-    // ...more transactions
+      "tx_hash": "0x123..."
+    }
   ],
   "pagination": {
     "currentPage": 1,
@@ -90,7 +87,7 @@ GET /api/transactions/page/:page?limit=20
 
 Returns details for a specific transaction.
 
-```
+```sh
 GET /api/transactions/:txHash
 ```
 
@@ -128,7 +125,7 @@ GET /api/transactions/:txHash
 
 Returns all transactions involving a specific address (as sender or receiver).
 
-```
+```sh
 GET /api/address/:address/transactions?page=1&limit=20
 ```
 
@@ -147,10 +144,8 @@ GET /api/address/:address/transactions?page=1&limit=20
   "data": [
     {
       "id": 1,
-      "tx_hash": "0x123...",
-      // ...other transaction fields
-    },
-    // ...more transactions
+      "tx_hash": "0x123..."
+    }
   ],
   "pagination": {
     "currentPage": 1,
@@ -166,7 +161,7 @@ GET /api/address/:address/transactions?page=1&limit=20
 
 Returns transactions filtered by transaction type.
 
-```
+```sh
 GET /api/transactions/type/:txType?page=1&limit=20
 ```
 
@@ -185,10 +180,8 @@ GET /api/transactions/type/:txType?page=1&limit=20
   "data": [
     {
       "id": 1,
-      "tx_hash": "0x123...",
-      // ...other transaction fields
-    },
-    // ...more transactions
+      "tx_hash": "0x123..."
+    }
   ],
   "pagination": {
     "currentPage": 1,
@@ -204,7 +197,7 @@ GET /api/transactions/type/:txType?page=1&limit=20
 
 Returns summary statistics about indexed blockchain data.
 
-```
+```sh
 GET /api/stats
 ```
 
@@ -224,7 +217,7 @@ GET /api/stats
 
 Allows searching for transactions by hash or address.
 
-```
+```sh
 GET /api/search?q=0x123
 ```
 
@@ -240,10 +233,8 @@ GET /api/search?q=0x123
 [
   {
     "id": 1,
-    "tx_hash": "0x123...",
-    // ...other transaction fields
-  },
-  // ...more matching transactions (up to 50)
+    "tx_hash": "0x123..."
+  }
 ]
 ```
 
